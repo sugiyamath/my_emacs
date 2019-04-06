@@ -1,10 +1,12 @@
 ;;; yasnippet-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil "yasnippet" "yasnippet.el" (23327 597 81269
-;;;;;;  847000))
+;;;### (autoloads nil "yasnippet" "yasnippet.el" (0 0 0 0))
 ;;; Generated autoloads from yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet" "\
@@ -25,7 +27,8 @@ Key bindings:
 
 (defvar yas-global-mode nil "\
 Non-nil if Yas-Global mode is enabled.
-See the command `yas-global-mode' for a description of this minor mode.
+See the `yas-global-mode' command
+for a description of this minor mode.
 Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `yas-global-mode'.")
@@ -45,10 +48,27 @@ See `yas-minor-mode' for more information on Yas minor mode.
 \(fn &optional ARG)" t nil)
 (autoload 'snippet-mode "yasnippet" "A mode for editing yasnippets" t nil)
 
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "yasnippet" '("yas" "help-snippet-def" "snippet-mode-map" "last-buffer-undo-list")))
+
 ;;;***
 
-;;;### (autoloads nil nil ("yasnippet-debug.el" "yasnippet-pkg.el"
-;;;;;;  "yasnippet-tests.el") (23327 597 304176 523000))
+;;;### (autoloads nil "yasnippet-debug" "yasnippet-debug.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from yasnippet-debug.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "yasnippet-debug" '("yas-")))
+
+;;;***
+
+;;;### (autoloads nil "yasnippet-tests" "yasnippet-tests.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from yasnippet-tests.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "yasnippet-tests" '("yas-")))
+
+;;;***
+
+;;;### (autoloads nil nil ("yasnippet-pkg.el") (0 0 0 0))
 
 ;;;***
 
@@ -56,5 +76,6 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; coding: utf-8
 ;; End:
 ;;; yasnippet-autoloads.el ends here
