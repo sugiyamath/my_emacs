@@ -1,12 +1,9 @@
 ;;; pyvenv-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory #$) (car load-path))))
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "pyvenv" "pyvenv.el" (0 0 0 0))
+;;;### (autoloads nil "pyvenv" "pyvenv.el" (23722 35650 956922 883000))
 ;;; Generated autoloads from pyvenv.el
 
 (autoload 'pyvenv-activate "pyvenv" "\
@@ -29,8 +26,7 @@ does not try to reactivate the environment.
 
 (defvar pyvenv-mode nil "\
 Non-nil if Pyvenv mode is enabled.
-See the `pyvenv-mode' command
-for a description of this minor mode.
+See the command `pyvenv-mode' for a description of this minor mode.
 Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `pyvenv-mode'.")
@@ -47,8 +43,7 @@ Will show the current virtualenv in the mode line, and respect a
 
 (defvar pyvenv-tracking-mode nil "\
 Non-nil if Pyvenv-Tracking mode is enabled.
-See the `pyvenv-tracking-mode' command
-for a description of this minor mode.
+See the command `pyvenv-tracking-mode' for a description of this minor mode.
 Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `pyvenv-tracking-mode'.")
@@ -69,14 +64,11 @@ Restart Python inferior processes.
 
 \(fn)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pyvenv" '("pyvenv-")))
-
 ;;;***
 
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; pyvenv-autoloads.el ends here
