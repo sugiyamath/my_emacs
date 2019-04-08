@@ -1,11 +1,9 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
-
+(package-initialize)
 (package-install 'elpy)
 (package-install 'web-mode)
-
-(package-initialize)
 (elpy-enable)
 ;; You should run these:
 ;; pip install rope jedi flake8 autopep8 yapf black
