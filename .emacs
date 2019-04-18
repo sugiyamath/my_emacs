@@ -7,7 +7,7 @@
   (package-install 'elpy)
   (shell-command "yes y| pip install --user -U rope jedi flake8 autopep8 yapf &")
   (shell-command "export PATH=${PATH}:~/.local/bin"))
-(unless (package-installed-p 'webmode)
+(unless (package-installed-p 'web-mode)
   (package-refresh-contents)
   (package-install 'web-mode)
 (elpy-enable)
