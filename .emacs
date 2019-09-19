@@ -1,15 +1,11 @@
 (require 'package)
+
+;need to install elpy, cyberpunk-theme, and web-mode
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
 (package-initialize)
-(unless (package-installed-p 'elpy)
-  (package-refresh-contents)
-  (package-install 'elpy)
-  (shell-command "yes y| pip install --user -U rope jedi flake8 autopep8 yapf &")
-  (shell-command "export PATH=${PATH}:~/.local/bin"))
-(unless (package-installed-p 'web-mode)
-  (package-refresh-contents)
-  (package-install 'web-mode)
+
 (elpy-enable)
 (setq elpy-rpc-python-command "python3")
 (global-set-key (kbd "C-c <left>")  'windmove-left)
@@ -17,7 +13,6 @@
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'cyberpunk t)
 
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
