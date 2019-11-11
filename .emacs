@@ -1,15 +1,21 @@
 (require 'package)
 
-(setq package-list '(elpy web-mode cyberpunk-theme))
-
 (add-to-list 'package-archives
 	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (package-initialize)
 
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+(let ((package-list
+       '(elpy
+	 web-mode
+	 cyberpunk-theme))
+      (refreshed? nil))
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (when (null refreshed?)
+	(package-refresh-contents)
+	(setq refreshed? t))
+      (package-install package))))
 
 (load-theme 'cyberpunk t)
 
